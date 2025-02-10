@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  auth-service:
+    build:
+      context: ./auth
+    ports:
+      - "3000:3000"
+    networks:
+      - hrms-network
+
+  client-vendor-service:
+    build:
+      context: ./clientVendor
+    ports:
+      - "3001:3001"
+    networks:
+      - hrms-network
+
+  hr-payroll-service:
+    build:
+      context: ./hrPayroll
+    ports:
+      - "3002:3002"
+    networks:
+      - hrms-network
+
+  expense-claim-service:
+    build:
+      context: ./expenseClaim
+    ports:
+      - "3003:3003"
+    networks:
+      - hrms-network
+
+  leave-management-service:
+    build:
+      context: ./leaveManagement
+    ports:
+      - "3004:3004"
+    networks:
+      - hrms-network
+
+  time-clock-attendance-service:
+    build:
+      context: ./timeClockAttendance
+    ports:
+      - "3005:3005"
+    networks:
+      - hrms-network
+
+  incident-management-service:
+    build:
+      context: ./incidentManagement
+    ports:
+      - "3006:3006"
+    networks:
+      - hrms-network
+
+  banking-service:
+    build:
+      context: ./banking
+    ports:
+      - "3007:3007"
+    networks:
+      - hrms-network
+
+  document-workflow-service:
+    build:
+      context: ./documentWorkflow
+    ports:
+      - "3008:3008"
+    networks:
+      - hrms-network
+
+  dashboard-service:
+    build:
+      context: ./dashboard
+    ports:
+      - "3009:3009"
+    networks:
+      - hrms-network
+
+networks:
+  hrms-network:
+    driver: bridge
